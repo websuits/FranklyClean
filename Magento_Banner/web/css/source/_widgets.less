@@ -1,0 +1,27 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .block-banners,
+    .block-banners-inline {
+        &:extend(.abs-margin-for-blocks-and-widgets);
+
+        .banner-items {
+            &:extend(.abs-reset-list all);
+        }
+
+        .banner-item {
+            display: block;
+        }
+
+        .banner-item-content {
+            margin-bottom: @indent__base;
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+}

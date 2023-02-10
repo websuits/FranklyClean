@@ -1,0 +1,190 @@
+//
+//  Flexbox
+//  ---------------------------------------------
+
+.flexbox(@direction, @alignItems, @justifyContent, @wrap) {
+  display: ~"-webkit-flex";
+  display: ~"-ms-flexbox";
+  display: flex;
+
+  -webkit-flex-direction: @direction;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+
+  -webkit-align-items: @alignItems;
+  -ms-align-items: @alignItems;
+  align-items: @alignItems;
+
+  justify-content: @justifyContent;
+  -webkit-box-pack: @justifyContent;
+  -ms-flex-pack: @justifyContent;
+
+  -webkit-flex-wrap: @wrap;
+  flex-wrap: @wrap;
+}
+
+.flex-center-center {
+  .flexbox(row, center, center, nowrap);
+}
+
+.flex-center-start {
+  .flexbox(row, center, start, nowrap);
+}
+
+.flex-center-space-between {
+  .flexbox(row, center, space-between, nowrap);
+}
+
+.flex-start-start {
+  .flexbox(row, flex-start, flex-start, nowrap);
+}
+
+//
+//  Static pages
+//  ---------------------------------------------
+
+.block {
+  display: block;
+}
+
+.regular-size {
+  font-size: @font-size_base;
+  line-height: 20px;
+
+  @media only screen and (min-width: 1024px) {
+    font-size: @font-size__l;
+    line-height: 25px;
+  }
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.weight-500 {
+  font-weight: @font-weight__heavier;
+}
+
+.weight-600 {
+  font-weight: @font-weight__semibold;
+}
+
+.weight-700 {
+  font-weight: @font-weight__bold;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.style-disc {
+  list-style: disc;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid @neutral_400;
+}
+
+.link {
+  color: @link;
+
+  &:hover,
+  &:focus,
+  &:visited,
+  &:active {
+    color: @link;
+  }
+}
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+.primary-button(
+  @background-color: @button_background,
+  @background-color-hover: @button_background-hover,
+  @border-width: @button_border-width,
+  @border-color: @button_border-color,
+  @border-color-hover: @button_border-color-hover,
+  @border-radius: @button_border-radius,
+  @color: @button_text-color,
+  @color-hover: @button_text-color-hover,
+  @font-size: @button_font-size,
+  @font-weight: @button_font-weight,
+  @width: @button_width,
+  @height: @button_height,
+  @padding: @button_padding,
+  @icon-code-before: unset,
+  @icon-code-after: unset,
+  @icon-font-size:unset,
+  @icon-color: unset,
+  @icon-color-hover: unset) {
+  .flexbox(row, center, center, nowrap);
+  background: @background-color;
+  border-width: @border-width;
+  border-color: @border-color;
+  border-radius: @border-radius;
+  color: @color;
+  font-size: @font-size;
+  font-weight: @font-weight;
+  width: @width;
+  height: @height;
+  padding: @padding;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: @background-color-hover;
+    color: @color-hover;
+    border-width: @border-width;
+    border-color: @border-color-hover;
+
+    &:before,
+    &:after {
+      color: @icon-color-hover;
+    }
+  }
+
+  &:before,
+  &:after {
+    color: @icon-color;
+    display: inline-block;
+    font-family: @button_icon-font;
+    font-size: @icon-font-size;
+  }
+
+  &:before {
+    content: @icon-code-before;
+    margin-right: 8px;
+  }
+
+  &:after {
+    content: @icon-code-after;
+    margin-left: 8px;
+  }
+}
