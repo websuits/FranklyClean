@@ -9,9 +9,9 @@
 
 @import 'source/base/lib/_lib.less'; // Global lib
 @import 'source/base/lib/variables/_email.less'; // Global email variables
-@import 'source/_theme.less'; // Global variables override
-@import 'source/_variables.less'; // Local theme variables
-@import 'source/_email-variables.less'; // Theme variables for emails
+@import 'source/blank/_theme.less'; // Global variables override
+@import 'source/blank/_variables.less'; // Local theme variables
+@import 'source/blank/_email-variables.less'; // Theme variables for emails
 
 //
 //  Output @font-face declarations
@@ -21,5 +21,5 @@
 
 //  Font stylesheet @import is wrapped in a media query in order to prevent it from causing problems in Outlook
 @media screen {
-    @import 'source/_typography.less';
+    @import 'source/blank/_typography.less';
 }

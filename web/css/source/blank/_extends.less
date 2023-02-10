@@ -1,7 +1,61 @@
-// /**
-//  * Copyright © Magento, Inc. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+//
+//  Listings Variables
+//  ---------------------------------------------
+
+@product-name-link__color: @text__color;
+@product-name-link__color__active: @text__color;
+@product-name-link__color__hover: @text__color;
+@product-name-link__color__visited: @text__color;
+
+@product-name-link__text-decoration: none;
+@product-name-link__text-decoration__active: @link__hover__text-decoration;
+@product-name-link__text-decoration__hover: @link__hover__text-decoration;
+@product-name-link__text-decoration__visited: @link__hover__text-decoration;
+
+@addto-color: @text__color__muted;
+@addto-hover-color: @primary__color;
+
+@button__shadow: inset 0 2px 1px rgba(0,0,0,.12);
+
+//
+//  Tooltip Variables
+//  _____________________________________________
+
+@checkout-tooltip__hover__z-index: @tooltip__z-index;
+
+@checkout-tooltip-icon-arrow__font-size: 10px;
+@checkout-tooltip-icon-arrow__left: -( @checkout-tooltip-content__padding + @checkout-tooltip-icon-arrow__font-size - @checkout-tooltip-content__border-width);
+
+@checkout-tooltip-icon__color: @color-gray-light2;
+@checkout-tooltip-icon__content: @icon-help;
+@checkout-tooltip-icon__font-size: 24px;
+@checkout-tooltip-icon__hover__color: @primary__color;
+
+@checkout-tooltip-content__background-color: @color-gray-light01;
+@checkout-tooltip-content__border-color: @color-gray60;
+@checkout-tooltip-content__border-width: 1px;
+@checkout-tooltip-content__font-size: @font-size__base;
+@checkout-tooltip-content__padding: 12px;
+@checkout-tooltip-content__width: 270px;
+@checkout-tooltip-content__active__border-color: darken(@checkout-tooltip-content__border-color, 20%);
+
+@checkout-tooltip-content-mobile-popup__width: 200px;
+@checkout-tooltip-content-mobile__right: -(@indent__s);
+@checkout-tooltip-content-mobile__top: 30px + @checkout-tooltip-icon-arrow__font-size;
+
+//
+//  Checkout Variables
+//  _____________________________________________
+
+@checkout-wrapper__margin: @indent__base;
+@checkout-wrapper__columns: 8;
+
+@checkout-step-title__border: @border-width__base solid @color-gray80;
+@checkout-step-title__font-size: 26px;
+@checkout-step-title__font-weight: @font-weight__light;
+@checkout-step-title__padding: @indent__s;
+
+@checkout-step-title-mobile__font-size: 18px;
 
 //
 //  Styles Extends

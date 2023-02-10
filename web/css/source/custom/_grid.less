@@ -1,0 +1,95 @@
+//
+// Grid system
+// ____________________________________________
+@enable-flex: true;
+@grid-columns:               12;
+@grid-gutter-width:          3rem; // 3rem
+
+.clearfix() {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.make-container(@gutter: @grid-gutter-width) {
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left:  (@gutter / 2);
+  padding-right: (@gutter / 2);
+  & when (@enable-flex = false) {
+    .clearfix();
+  }
+}
+
+
+// For each breakpoint, define the maximum width of the container in a media query
+// @mixin make-container-max-widths($max-widths: $container-max-widths) {
+//   @each $breakpoint, $container-max-width in $max-widths {
+//     @include media-breakpoint-up($breakpoint) {
+//       max-width: $container-max-width;
+//     }
+//   }
+// }
+
+  .make-row(@gutter: @grid-gutter-width) {
+    & when (@enable-flex = true) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    & when (@enable-flex = false) {
+      .clearfix();
+    }
+    margin-left: (@gutter / -2);
+    margin-right: (@gutter / -2);
+  }
+
+  .make-col(@gutter: @grid-gutter-width) {
+    position: relative;
+    & when (@enable-flex = false) {
+    float: left;
+  }
+    min-height: .1rem;
+    box-sizing: border-box;
+    padding-left:  (@gutter / 2);
+    padding-right: (@gutter / 2);
+  }
+
+  .make-col-span(@size, @columns: @grid-columns) {
+    & when (@enable-flex = true) {
+      width: percentage(@size / @columns);
+    }
+    & when (@enable-flex = false) {
+      width: percentage(@size / @columns);
+    }
+  }
+
+  .make-col-offset(@size, @columns: @grid-columns) {
+    margin-left: percentage(@size / @columns);
+  }
+
+  .make-col-push(@size, @columns: @grid-columns) {
+    & when (@size > 0) {
+      left: percentage((@size / @columns), auto);
+    }
+  }
+
+  .make-col-pull(@size, @columns: @grid-columns) {
+    & when (@size > 0) {
+      right: percentage((@size / @columns), auto);
+    }
+  }
+
+  .make-col-modifier(@type, @size, @columns) {
+    & when (@type = push) {
+      .make-col-push(@size, @columns);
+    }
+    & when (@type = pull) {
+      .make-col-pull(@size, @columns);
+    }
+    & when (@type = offset) {
+      .make-col-offset(@size, @columns);
+    }
+  }
