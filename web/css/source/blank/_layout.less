@@ -73,6 +73,19 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    body {
+        &:not(.cms-page-view, .cms-home) {
+            .page-main {
+                box-sizing: border-box;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: @layout-indent__width;
+                padding-right: @layout-indent__width;
+                width: auto;
+            }
+        }
+    }
+
     .navigation,
     .breadcrumbs,
     .page-header .header.panel,
@@ -81,8 +94,7 @@
     .page-wrapper > .widget,
     .page-wrapper > .page-bottom,
     .block.category.event,
-    .top-container,
-    .page-main {
+    .top-container {
         box-sizing: border-box;
         margin-left: auto;
         margin-right: auto;
