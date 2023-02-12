@@ -3,6 +3,7 @@
     <head>
         <remove src="css/styles-m.css" />
         <remove src="css/styles-l.css" />
+        <css src="css/swiper.min.css" />
         <css src="css/general-m.css" />
         <css src="css/general.css" media="screen and (min-width: 768px)" />
         <css src="css/header-m.css" />
