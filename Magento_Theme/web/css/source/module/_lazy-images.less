@@ -1,0 +1,32 @@
+//.product-image {
+//    position: relative;
+//    height: auto;
+//
+//    &__container {
+//        position: relative;
+//        height: 100%;
+//        width: auto;
+//    }
+//}
+//
+.lazy {
+    &-container {
+        background-size: contain;
+        background-position: center left;
+        background-repeat: no-repeat;
+    }
+
+    &-image {
+        opacity: 0 !important;
+
+        &.lazy--show {
+            opacity: 1 !important;
+        }
+    }
+
+    &-visible {
+        -webkit-transition: opacity .75s linear .05s;
+        -moz-transition: opacity .75s linear .05;
+        transition: opacity .75s linear .05s;
+    }
+}

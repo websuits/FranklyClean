@@ -1,0 +1,38 @@
+& when (@media-common = true) {
+    //.pagebuilder-slider {
+    //    [data-content-type="slide"] {
+    //        &.swiper-slide.swiper-slide-active {
+    //            .pagebuilder-slide-wrapper {
+    //                opacity: 1;
+    //            }
+    //        }
+    //        .pagebuilder-slide-wrapper {
+    //            opacity: 0;
+    //        }
+    //    }
+    //}
+    div.swiper-container { // override original swiper styles
+        &.pagebuilder-slider-container {
+            width: 100%;
+            .pagebuilder-slider {
+                width: 100%;
+            }
+        }
+        .swiper-slide {
+            height: auto;
+        }
+    }
+
+    // Hide slide description when lazy loaded image is not preloaded.
+    .swiper-lazy-preloader ~ * {
+        visibility: hidden;
+    }
+
+    // FIXES
+    .swiper-slide {
+        img {
+            vertical-align: top; /* http://stackoverflow.com/questions/17505418/link-wrapped-around-image-makes-div-slightly-taller */
+            height: auto;
+        }
+    }
+}
