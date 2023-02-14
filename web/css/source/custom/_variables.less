@@ -28,7 +28,31 @@
 @font-weight__black: 700;
 
 //
-//  Colors
+// Headings
+//  ---------------------------------------------
+
+@heading__font-family__base: @font-family__playfair;
+@heading__font-weight__base: @font-weight__bold;
+@h2__font-size: ceil((@font-size__base * 1.71)); // 24px
+
+//
+//  Links
+//  ---------------------------------------------
+
+@link__color: @primary__color;
+@link__text-decoration: none;
+
+@link__visited__color: @link__color;
+@link__visited__text-decoration: none;
+
+@link__hover__color: @link__color;
+@link__hover__text-decoration: underline;
+
+@link__active__color: @link__color;
+@link__active__text-decoration: underline;
+
+//
+//  New Colors
 //  _____________________________________________
 
 @main_text: #342017;
@@ -36,6 +60,18 @@
 @main_background_hover: #6D7420;
 @secondary_background: #F9EBE4;
 @secondary_background_hover: #EEE0D9;
+@borders: #e5e3e2;
+@input_focus: #f7f6f6;
+
+//
+//  Colors
+//  ---------------------------------------------
+
+@primary__color: @main_text;
+@theme__color__primary: @main_background;
+@theme__color__primary-alt: @main_background_hover;
+@theme__color__secondary: @secondary_background_hover;
+
 
 //
 //  Layout & Resolutions
@@ -80,14 +116,16 @@
 @button-primary__active__background: @button-primary__hover__background;
 @button-primary__active__border: @button-primary__hover__border;
 
-//
-//  Colors
-//  ---------------------------------------------
+// Forms
 
-@primary__color: @main_text;
+@form-element-input__border-color: @borders;
+@form-element-input__border-radius: 4px;
+@form-element-input__height: 45px;
+@form-element-input__padding: 3px 9px;
 
-@theme__color__primary: @main_background;
-@theme__color__primary-alt: @main_background_hover;
-@theme__color__secondary: @secondary_background_hover;
-
+//  Forms Focus state
+@form-element-input__focus__background: @input_focus;
+@form-element-input__focus__border: 1px solid @color-black;
+@form-element-input__focus__color: @form-element-input__color;
+@form-element-input__focus__font-style: @form-element-input__font-style;
 
