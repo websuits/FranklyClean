@@ -1,6 +1,6 @@
-@import '_module-variables.less';
 @import 'module/_listings.less';
 @import 'module/_toolbar.less';
+@import 'module/_details.less';
 
 //
 //  Common
@@ -314,7 +314,9 @@
             }
 
             .action.tocart {
-                &:extend(.abs-button-l all);
+                .lib-button-l(@_button-l-padding: 10px 77px);
+                height: 48px;
+                letter-spacing: 1px;
             }
         }
 

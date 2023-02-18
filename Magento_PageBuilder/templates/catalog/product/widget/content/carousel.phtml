@@ -5,11 +5,14 @@ use Magento\Framework\App\Action\Action;
 
 /** @var \Magento\CatalogWidget\Block\Product\ProductsList $block */
 ?>
-<?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
+<?php
+$_helper = $block->getData('outputHelper');
+if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
     <?php
     $type = 'widget-product-carousel';
 
     $image = 'new_products_content_widget_grid';
+    $imageHover = 'hover_product_list';
     $items = $block->getProductCollection()->getItems();
 
     $showWishlist = true;
@@ -25,9 +28,12 @@ use Magento\Framework\App\Action\Action;
                 <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo">
                     <?= $block->getImage($_item, $image)->toHtml() ?>
                 </a>
+                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-photo product-item-photo-hover">
+                    <?= $block->getImage($_item, $imageHover)->toHtml() ?>
+                </a>
                 <div class="product-item-details">
                     <strong class="product-manufacturer">
-                        <?php /* TODO */ ?> Apple
+                        <?= $_item->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_item) ?>
                     </strong>
                     <strong class="product-item-name">
                         <a title="<?= $block->escapeHtml($_item->getName()) ?>"

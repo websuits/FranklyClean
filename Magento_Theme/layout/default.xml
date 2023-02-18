@@ -12,5 +12,59 @@
                 <argument name="logo_width" xsi:type="number">170</argument>
             </arguments>
         </referenceBlock>
+        <referenceBlock name="skip_to_content" remove="true"/>
+        <referenceBlock name="store_language" remove="true"/>
+        <referenceBlock name="store.settings" remove="true"/>
+        <referenceBlock name="currency" remove="true"/>
+        <referenceBlock name="wish-list-link" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="catalog.compare.link" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceContainer name="header-wrapper">
+            <container name="header.links.container" label="Header Account Links" htmlTag="div" htmlClass="header-links-container" >
+                <block class="Magento\Framework\View\Element\Text" name="label.placeholder.test">
+                    <arguments>
+                        <argument name="text" xsi:type="string"><![CDATA[<!-- -->]]></argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Cms\Block\Block" name="header_top_bar">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">header_top_bar</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer_info" before="footer.newsletter.col">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_info</argument>
+                </arguments>
+            </block>
+            <container name="footer.newsletter.col" label="Footer Newsletter Col" htmlTag="div" htmlClass="block-newsletter-container">
+                <block class="Magento\Cms\Block\Block" name="footer_legal" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer_legal</argument>
+                    </arguments>
+                </block>
+            </container>
+            <block class="Magento\Cms\Block\Block" name="footer_services" after="footer.newsletter.col">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer_services</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <move element="form.subscribe" destination="footer.newsletter.col" before="-" />
+        <move element="top.links" destination="header.links.container" before="-" />
+        <move element="copyright" destination="footer-container" after="-" />
+        <move element="ammenu.logo" destination="header-wrapper" before="-" />
+
+
+        <move element="minicart" destination="header-wrapper" before="ammenu.logo" />
+        <move element="header.links.container" destination="header-wrapper" after="minicart" />
+        <move element="top.search" destination="header-wrapper" after="header.links.container" />
     </body>
 </page>

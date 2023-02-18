@@ -1,0 +1,110 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .post-list-wrapper.blog-widget-recent {
+    .post-list {
+      .flexbox(row, center, center, wrap);
+      width: 100%;
+      .post-holder {
+        margin-bottom: 0;
+        &:hover {
+          .post-title {
+            &:before {
+              background-color: @layout_background;
+            }
+          }
+        }
+        .flexbox(column, center, center, wrap);
+        width: 100%;
+        .post-content {
+          order: 1;
+        }
+        .post-header {
+          order: 2;
+          margin: 0 30px;
+          padding: 10px 30px;
+          background: @color-white;
+          position: relative;
+          top: -60px;
+        }
+        .post-date {
+          width: 100%;
+          text-align: center;
+          color: @link_colors;
+        }
+        .post-title {
+          .lib-font-size(19);
+          width: 100%;
+          padding: 0;
+          line-height: 26px;
+          font-family: @font-family__playfair, sans-serif;
+          font-weight: 600;
+          text-align: center;
+          &:before {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 64px;
+            background-color: @secondary_background;
+            left: 50%;
+            -webkit-transform: translatex(-50%);
+            -moz-transform: translatex(-50%);
+            -ms-transform: translatex(-50%);
+            -o-transform: translatex(-50%);
+            transform: translatex(-50%);
+            bottom: -15px;
+            border-radius: 2px;
+          }
+        }
+        .post-footer {
+          order: 3;
+        }
+      }
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .post-list-wrapper.blog-widget-recent {
+    .post-list {
+      .post-holder {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
+  .post-list-wrapper.blog-widget-recent {
+    .post-list {
+      .post-holder {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .post-list-wrapper.blog-widget-recent {
+    .post-list {
+      .post-holder {
+        max-width: 33%;
+      }
+    }
+  }
+}
+

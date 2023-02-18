@@ -45,10 +45,10 @@
         }
 
         .control {
-            border-top: 1px solid @border-color__base;
+            //border-top: 1px solid @border-color__base;
             clear: both;
             margin: 0 -@layout__width-xs-indent -1px;
-            padding: 0 @layout__width-xs-indent;
+            //padding: 0 @layout__width-xs-indent;
         }
 
         input {
@@ -189,11 +189,21 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .search-autocomplete {
+        margin-top: 0;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .block-search {
         float: right;
-        padding-left: 15px;
+        //padding-left: 15px;
         position: relative;
-        width: 250px;
+        //width: 250px;
         z-index: 4;
 
         .label {
@@ -203,7 +213,7 @@
         .control {
             border-top: 0;
             margin: 0;
-            padding: 0 0 25px;
+            //padding: 0 0 25px;
         }
 
         .nested {
@@ -220,18 +230,25 @@
         }
 
         .action.search {
-            display: inline-block;
+            //display: inline-block;
+            display: block;
             .lib-button-icon(
-            @_icon-font-content: @icon-search,
-            @_icon-font-text-hide: true,
-            @_icon-font-color: @header-icons-color
+                @_icon-font-content: @icon-search,
+                @_icon-font-text-hide: true,
+                @_icon-font-color: @header-icons-color
             );
             .lib-button-reset();
             padding: @indent__xs 0;
-            position: absolute;
-            right: 10px;
-            top: 0;
+            //position: absolute;
+            //right: 10px;
+            //top: 0;
             z-index: 1;
+
+            &:before {
+                display: block;
+                .lib-font-size(35);
+                .lib-css(line-height, 35px);
+            }
 
             &:focus {
                 &:before {

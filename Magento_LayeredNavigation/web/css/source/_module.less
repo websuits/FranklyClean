@@ -5,11 +5,7 @@
 & when (@media-common = true) {
 
     .block.filter {
-        margin-bottom: @indent__xl;
-
         .filter-title {
-            margin-bottom: @indent__base;
-
             strong {
                 font-size: 18px;
             }
@@ -44,22 +40,34 @@
         .filter-count-label {
             &:extend(.abs-visually-hidden all);
         }
+        a {
+            &:hover {
+                text-decoration: underline;
+                background: initial;
+            }
+        }
     }
 
     .filter-options {
         margin: 0;
 
         .filter-options-title {
-            .lib-heading(h4);
-            margin: 0 0 @indent__s;
-            word-break: break-all;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: none;
+            border-top: 1px solid #E5E3E2;
+            padding-top: 16px;
+            padding-left: 0;
+            margin-bottom: 0;
+            padding-bottom: 16px;
         }
 
         .filter-options-content {
-            margin: 0 0 @indent__m;
-
+            padding: 0;
+            margin-bottom: 16px;
             .item {
-                margin-bottom: 3px;
+                margin-top: 5px;
+                margin-bottom: 0;
             }
         }
 

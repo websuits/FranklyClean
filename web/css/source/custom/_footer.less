@@ -1,0 +1,178 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .page-footer {
+    background: @layout_secondary_background;
+    width: 100%;
+    .footer.content {
+      .title {
+        text-align: center;
+        text-transform: uppercase;
+        .lib-css(letter-spacing, 1px);
+      }
+      .subtitle {
+        display: block;
+        margin-bottom: 16px;
+      }
+      .subtitle,
+      .subtitle > a {
+        .lib-css(font-family, @font-family-name__secondary);
+        .lib-line-height(26);
+        .lib-css(color, @primary__color);
+        font-weight: 700;
+        text-align: center;
+      }
+      .footer-adress {
+        .flexbox(column, center, center, nowrap);
+        > span,
+        > div,
+        > a {
+          .lib-css(color, @link_colors);
+          margin: 0 0 10px 0;
+        }
+      }
+      ul {
+        .flexbox(column, center, center, nowrap);
+        width: 100%;
+        > li {
+          margin-bottom: 8px;
+          > a {
+            .lib-css(color, @link_colors);
+            text-decoration: none;
+            &:hover {
+              .lib-css(color, @link_hover_colors);
+            }
+          }
+        }
+      }
+    }
+    .block.newsletter {
+      .content {
+        margin-bottom: 32px;
+      }
+      .field.newsletter {
+        position: relative;
+        max-width: 90%;
+        margin: 0 auto;
+        .control {
+          input {
+            .lib-font-size(16);
+            .lib-css(color, @color-black);
+            height: 5.8rem;
+            border: 0;
+            background-color: rgba(52,32,23,0.08);
+            border-radius: 6px;
+            &::placeholder {
+              .lib-css(color, @color-black);
+              opacity: 50%;
+            }
+          }
+        }
+        .actions {
+          display: block;
+          position: absolute;
+          right: 6px;
+          top: 6px;
+          .action.primary {
+            &:extend(.abs-button-l all);
+            .lib-font-size(14);
+            font-weight: 400;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            background-color: rgba(52,32,23,0.64);
+            color: @color-white;
+            width: 100%;
+            padding: 10px 12px;
+            text-transform: uppercase;
+            height: 45px;
+            &:hover {
+              background-color: rgba(52,32,23,1);
+            }
+          }
+        }
+      }
+    }
+    .copyright {
+      width: 100%;
+      padding: 10px 0;
+      background: @layout_background;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      .lib-font-size(12);
+      text-align: center;
+    }
+  }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+  .page-footer {
+    .make-container(@gutter: 0);
+    .block.newsletter {
+      .field.newsletter {
+        margin-bottom: 32px;
+      }
+    }
+    .footer.content {
+      .make-row(@gutter: 0);
+      padding: 20px;
+      >[data-content-type="row"] {
+        .make-col-span(12);
+      }
+      >.block-newsletter-container {
+        .make-col-span(12);
+      }
+      .title {
+        margin-bottom: 24px;
+      }
+      .subtitle,
+      .subtitle > a {
+        .lib-font-size(19);
+      }
+      ul {
+        margin-bottom: 25px;
+      }
+    }
+    .copyright {
+      .flex-center-center();
+    }
+  }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+  .page-footer {
+    .make-container(@gutter: 0);
+    .footer.content {
+      .make-row(@gutter: 0  );
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 64px;
+      padding-bottom: 54px;
+      >[data-content-type="row"] {
+        .make-col-span(3);
+      }
+      >.block-newsletter-container {
+        .make-col-span(6);
+      }
+      .title {
+        margin-bottom: 16px;
+      }
+      .subtitle,
+      .subtitle > a {
+        .lib-font-size(24);
+      }
+    }
+    .copyright {
+      .flex-center-center();
+    }
+  }
+}

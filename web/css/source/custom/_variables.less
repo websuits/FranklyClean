@@ -1,11 +1,12 @@
 //
 //  Typography
 //  ---------------------------------------------
-@font-family__playfair: 'Plairfair Display';
+@font-family__playfair: 'Playfair Display';
 @font-family__worksans: 'Work Sans';
 @font-family__icomoon: 'icomoon';
 
 @font-family-name__base: @font-family__worksans, sans-serif;
+@font-family-name__secondary: @font-family__playfair, sans-serif;
 @icomoon: @font-family__icomoon;
 
 @font-family__base: @font-family-name__base;
@@ -33,6 +34,7 @@
 
 @heading__font-family__base: @font-family__playfair;
 @heading__font-weight__base: @font-weight__bold;
+@h1__font-size-desktop: ceil((@font-size__base * 2)); // 26px
 @h2__font-size: ceil((@font-size__base * 1.71)); // 24px
 
 //
@@ -56,6 +58,10 @@
 //  _____________________________________________
 
 @main_text: #342017;
+@layout_background: #E8B29E;
+@layout_secondary_background: #f9ebe4;
+@link_colors: #8d827d;
+@link_hover_colors: @primary__color;
 @main_background: #7A8227;
 @main_background_hover: #6D7420;
 @secondary_background: #F9EBE4;
@@ -72,6 +78,10 @@
 @theme__color__primary-alt: @main_background_hover;
 @theme__color__secondary: @secondary_background_hover;
 
+//  Header
+@header__background-color: false;
+@header-icons-color: @primary__color;
+@header-icons-color-hover: @primary__color;
 
 //
 //  Layout & Resolutions
@@ -86,7 +96,7 @@
 @screen_m: 768px;
 @screen_before_l: 1023px;
 @screen_l: 1024px;
-@screen_xl: 1440px;
+@screen_xl: 1240px;
 @screen_xxl: 1485px;
 
 //

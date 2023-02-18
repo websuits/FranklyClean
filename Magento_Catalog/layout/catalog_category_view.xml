@@ -4,4 +4,9 @@
         <css src="css/plp-m.css" />
         <css src="css/plp.css" media="screen and (min-width: 768px)" />
     </head>
+    <body>
+        <move element="breadcrumbs" destination="main" before="-" />
+        <move element="page.main.title" destination="main" after="breadcrumbs" />
+        <move element="category.view.container" destination="main" after="page.main.title" />
+    </body>
 </page>

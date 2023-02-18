@@ -11,7 +11,26 @@
     //        }
     //    }
     //}
+    div.pagebuilder-slider {
+        &:not(.swiper-wrapper) {
+            [data-content-type="slide"] {
+                display: none;
+                height: 100%;
+                > div {
+                    height: 100%;
+                    div,
+                    .pagebuilder-slide-wrapper {
+                        height: 100%;
+                    }
+                }
+                &:first-of-type {
+                    display: block;
+                }
+            }
+        }
+    }
     div.swiper-container { // override original swiper styles
+
         &.pagebuilder-slider-container {
             width: 100%;
             .pagebuilder-slider {
@@ -19,7 +38,14 @@
             }
         }
         .swiper-slide {
-            height: auto;
+            height: 100%;
+            > div {
+                height: 100%;
+                div,
+                .pagebuilder-slide-wrapper {
+                    height: 100%;
+                }
+            }
         }
     }
 

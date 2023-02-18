@@ -1,0 +1,27 @@
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+  .page-title {
+    position: relative;
+    font-style: normal;
+    .lib-font-size(24);
+    font-weight: 700;
+    font-family: @font-family__playfair;
+    text-transform: none;
+    color: @main_text;
+    margin-bottom: 32px;
+    :after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 64px;
+      background-color: @layout_background;
+      letter-spacing: 0;
+      bottom: -15px;
+      border-radius: 2px;
+      left: 0;
+    }
+  }
+}
